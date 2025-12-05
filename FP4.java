@@ -1,54 +1,64 @@
-import java.util.list;
-import java.util.Arraylist;
-
+import java.util.List;
+import java.util.ArrayList;
 class TCalc {
     private List<String> names = new ArrayList<>();
     private int tPercentage = 0;
 
     public List<String> addPerson(List<String> names, String name) {
-        List<String> updated = new ArrayList<>(names);
-        update.add(name);
-        return updated;
+	    List<String> updated = new ArrayList<>(names);
+	    updated.add(name);
+	    return updated;
     }
-    
-//     public int getDiscountPercentage(List<String> items1) {
-//	    if(items1.contains("Книга"))
-//		    return 5;
-//	    else
-//		    return 0;
-//    }
-    
-    public List<String> getnames() {
+   /* 
+    public int getDiscountPercentage(List<String> items1) {
+	    if(items1.contains("Книга")) 
+		    return 5;
+	    else 
+		    return 0;
+    }
+    */
+
+    public List<String> getNames() {
         return names;
     }
 
     public int getTPercentage(List<String> names) {
-        if (name.size() > 5) {
-            return 20;
-        }
-        else if (name.size()) > 0) {
-            return  = 10;
-        }
-
-        return 0;
+	if(names.size() > 5) {
+		return 20;
+	}
+	else if (names.size() > 0) {
+		return 10;
+	}
+    	return 0;
     }	    
 }
-
-//class FP4 {
-//    public static void main(String[] args) {
-//        //Демонстрация работы метода getDiscountPercentage(), реализованного в виде чистой функции
-//        ShoppingCard card = new ShoppingCard();
-//        card.addItem("Флешка");
-//        card.addItem("Диск");
-//        card.addItem("Смартфон");
-//        card.addItems();
-//        card.addItems().remove("Смартфон");
-//        card.addItems();
-//        card.getDiscountPercentage(card.getItems());
-//        ShoppingCard card2 = new ShoppingCard();
-//        card2.removeItem("Книга");
-//        System.out.println("Скидка для card: " + card.getDiscountPercentage(card.getItems()));
-//        card.getDiscountPercentage(card2.getItems());
-//        System.out.println("Скидка для card2: " + card2.getDiscountPercentage(card2.getItems()));
-//    }
-//}
+class FP4 {
+	public static void main(String[] args) {
+		TCalc list1 = new TCalc();
+		List<String> l1 = new ArrayList <> ();
+		l1 = list1.addPerson(l1, "Ринат");
+		System.out.println("Размер чаевых для l1: " + list1.getTPercentage(l1));
+		List<String> l2 = new ArrayList <> ();
+		for (int i = 0; i < 10; i++)
+			l2 = list1.addPerson(l2, "Юрий");
+		l2 = list1.addPerson(l1, "Юрий");
+		System.out.println("Размер чаевых для l1: " + list1.getTPercentage(l2));
+		//Тестирование чистой функции getPercentage() для 3-х вариантов:
+		//Пустой список:
+		List <String> l3 = new ArrayList <> ();
+		System.out.println("\nПроверка пустого списка");
+		if (list1.getTPercentage(l3) == 0)
+			System.out.println("Работает правильно");
+		else System.out.println("Ошибка");
+		//Список от 1 до 5 человек		
+		System.out.println("\nПроверка списка l1");
+		if (list1.getTPercentage(l1) == 10)
+			System.out.println("Рабоатет правильно");
+		else System.out.println("Ошибка");
+		//Список больше 5 человек
+		System.out.println("\nПроверка списка l2");
+		if (list1.getTPercentage(l2) == 20)
+			System.out.println("Рабоатет правильно");
+		else System.out.println("Ошибка");
+	}
+}
